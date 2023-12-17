@@ -14,6 +14,7 @@ export default function EmailSection() {
           <Link href={"github.com"}>
             <img src="/images/github-icon.svg" alt="" />
           </Link>
+
           <Link href={"github.com"}>
             <img src="/images/linkedin-icon.svg" alt="" />
           </Link>
