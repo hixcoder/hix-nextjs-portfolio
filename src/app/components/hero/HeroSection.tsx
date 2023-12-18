@@ -34,15 +34,15 @@ export default function HeroSection() {
             />
           </h1>
           <p className="text-gray-400 text-base sm:text-lg lg:text-xl mb-6">
-            Lorem Ipsum has been the industry&apos;s standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
+            Lorem Ipsum has been the industry&apos;s standard dummy text ever
+            since the 1500s, when an unknown printer took a galley of type and
             scrambled it to make a type
           </p>
           <div>
-            <button className="w-full sm:w-fit px-6 py-3 rounded-full mr-4 bg-white hover:bg-slate-200 text-white bg-gradient-to-br from-color-main via-color-main to-color-second">
+            <button className="w-full sm:w-fit px-6 py-3 rounded-full mr-4 bg-white hover:bg-slate-200 text-white bg-gradient-to-br from-color-main  to-color-third">
               Hire me
             </button>
-            <button className="w-full sm:w-fit  p-1  rounded-full bg-transparent hover:bg-slate-800 text-white  mt-3 bg-gradient-to-br from-color-main via-color-main to-color-second">
+            <button className="w-full sm:w-fit  p-1  rounded-full bg-transparent hover:bg-slate-800 text-white  mt-3 bg-gradient-to-br from-color-main  to-color-third">
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                 Download CV
               </span>
