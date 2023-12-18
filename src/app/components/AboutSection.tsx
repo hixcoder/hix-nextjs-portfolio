@@ -55,7 +55,7 @@ export default function AboutSection() {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base md:text-lg">
-            Lorem Ipsum has been the industry's standard dummy text ever since
+            Lorem Ipsum has been the industry&apos;s standard dummy text ever since
             the 1500s, when an unknown printer took a galley of type and
             scrambled it to make a type
           </p>

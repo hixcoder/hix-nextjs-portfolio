@@ -57,9 +57,9 @@ export default function EmailSection() {
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-color-main to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
 
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">Let's Connect</h5>
+        <h5 className="text-xl font-bold text-white my-2">Let&apos;s Connect</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          Lorem Ipsum has been the industry's standard dummy text ever since the
+          Lorem Ipsum has been the industry&apos;s standard dummy text ever since the
           1500s, when an unknown printer took a galley of type and scrambled it
           to make a type
         </p>
@@ -117,7 +117,7 @@ export default function EmailSection() {
             <textarea
               name="message"
               id="message"
-              placeholder="Let's talk about..."
+              placeholder="Let&apos;s talk about..."
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A] text-gray-100 text-sm rounded-lg block w-full p-2.5"
             />
           </div>

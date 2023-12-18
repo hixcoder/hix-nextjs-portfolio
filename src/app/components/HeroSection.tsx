@@ -14,7 +14,7 @@ export default function HeroSection() {
         >
           <h1 className="mb-4 text-4xl sm:text-5xl lg:text-8xl font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-color-main  to-color-second">
-              Hello, I'm {""}
+              Hello, I&apos;m {""}
             </span>
             <br />
             <TypeAnimation
@@ -34,7 +34,7 @@ export default function HeroSection() {
             />
           </h1>
           <p className="text-gray-400 text-base sm:text-lg lg:text-xl mb-6">
-            Lorem Ipsum has been the industry's standard dummy text ever since
+            Lorem Ipsum has been the industry&apos;s standard dummy text ever since
             the 1500s, when an unknown printer took a galley of type and
             scrambled it to make a type
           </p>
