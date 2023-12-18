@@ -4,7 +4,7 @@ export default function ProjectTag(prompt: {
   isSelected: boolean;
 }) {
   const buttonStyles = prompt.isSelected
-    ? "text-white border-purple-500"
+    ? "text-white border-color-main"
     : "text-[#ADB7BE] border-slate-600 hover:border-white";
   return (
     <button
