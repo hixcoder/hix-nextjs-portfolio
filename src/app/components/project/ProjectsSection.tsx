@@ -9,57 +9,48 @@ export default function ProjectsSection() {
   const projectsData = [
     {
       id: 1,
-      title: "React Portfolio Website",
-      description: "Project 1 description",
+      title: "hix-nextjs-portfolio",
+      description: "#Nextjs #TS #Tailwind ",
       image: "/images/projects/1.png",
       tag: ["All", "Web"],
-      gitUrl: "/",
-      previewUrl: "/",
+      gitUrl: "https://github.com/hixcoder/hix-nextjs-portfolio",
+      previewUrl: "https://hixcoder.me",
     },
     {
       id: 2,
-      title: "Potography Portfolio Website",
-      description: "Project 2 description",
+      title: "HixSocial",
+      description: "#JS #HTML5 #CSS3 #Axios",
       image: "/images/projects/2.png",
       tag: ["All", "Web"],
-      gitUrl: "/",
-      previewUrl: "/",
+      gitUrl: "https://github.com/hixcoder/HixSocial",
+      previewUrl: "",
     },
     {
       id: 3,
-      title: "E-commerce Application",
-      description: "Project 3 description",
+      title: "ft_transcendance",
+      description: "#Nextjs #TS #Tailwind #Redux #Nestjs #Postgres ",
       image: "/images/projects/3.png",
       tag: ["All", "Web"],
-      gitUrl: "/",
-      previewUrl: "/",
+      gitUrl: "https://github.com/hixcoder/ft_transcendance",
+      previewUrl: "",
     },
     {
       id: 4,
-      title: "Food Ordering Application",
-      description: "Project 4 description",
+      title: "hix_front-end",
+      description: "#HTML5 #CSS3 ",
       image: "/images/projects/4.png",
-      tag: ["All", "Mobile"],
-      gitUrl: "/",
-      previewUrl: "/",
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/hixcoder/hix_front-end",
+      previewUrl: "https://hixcoder.github.io/hix_front-end/",
     },
     {
       id: 5,
-      title: "React Firebase Template",
-      description: "Authentication and CRUD operations",
+      title: "HixSocial",
+      description: "#JS #HTML5 #CSS3 ",
       image: "/images/projects/5.png",
       tag: ["All", "Web"],
-      gitUrl: "/",
-      previewUrl: "/",
-    },
-    {
-      id: 6,
-      title: "Full-stack Roadmap",
-      description: "Project 5 description",
-      image: "/images/projects/6.png",
-      tag: ["All", "Web"],
-      gitUrl: "/",
-      previewUrl: "/",
+      gitUrl: "https://github.com/hixcoder/HixSocial",
+      previewUrl: "",
     },
   ];
 
@@ -103,6 +94,13 @@ export default function ProjectsSection() {
             handleTagChange("Mobile");
           }}
           isSelected={tag === "Mobile"}
+        />
+        <ProjectTag
+          name="C/C++"
+          onClick={() => {
+            handleTagChange("C/C++");
+          }}
+          isSelected={tag === "C/C++"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
