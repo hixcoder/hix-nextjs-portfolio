@@ -69,7 +69,7 @@ export default function ProjectsSection() {
     project.tag.includes(tag)
   );
   return (
-    <section>
+    <section id="projects">
       <h1 className="text-center text-4xl font-bold text-white mt-4 mb-8">
         My projects
       </h1>

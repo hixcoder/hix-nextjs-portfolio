@@ -4,16 +4,16 @@ import { FormEvent, useState } from "react";
 
 export default function EmailSection() {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
-
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     // Access form elements directly using FormData
     const target = e.target as HTMLFormElement;
     const formData = new FormData(target);
-    const email = formData.get("email") as string;
-    const subject = formData.get("subject") as string;
-    const message = formData.get("message") as string;
+    console.log("formData", formData);
+    const email = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
 
     // Perform basic validation
     if (!email || !subject || !message) {
@@ -22,8 +22,14 @@ export default function EmailSection() {
       return;
     }
 
-    const data = { email, subject, message };
+    const data = {
+      email: email,
+      subject: subject,
+      message: message,
+    };
+    console.log(data);
     const JSONdata = JSON.stringify(data);
+    console.log(JSONdata);
     const endpoint = "/api/send";
     const options = {
       method: "POST",
@@ -53,15 +59,20 @@ export default function EmailSection() {
   }
 
   return (
-    <section className="grid md:grid-cols-2 my-12 md:mx-12 py-24 gap-4 relative">
+    <section
+      className="grid md:grid-cols-2 my-12 md:mx-12 py-24 gap-4 relative"
+      id="contact"
+    >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-color-main to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
 
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">Let&apos;s Connect</h5>
+        <h5 className="text-xl font-bold text-white my-2">
+          Let&apos;s Connect
+        </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          Lorem Ipsum has been the industry&apos;s standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type
+          Lorem Ipsum has been the industry&apos;s standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href={"github.com"}>
@@ -117,7 +128,7 @@ export default function EmailSection() {
             <textarea
               name="message"
               id="message"
-              placeholder="Let&apos;s talk about..."
+              placeholder="Let's talk about..."
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A] text-gray-100 text-sm rounded-lg block w-full p-2.5"
             />
           </div>
