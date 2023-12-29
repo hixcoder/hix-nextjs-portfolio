@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import NavLink from "./NavLink";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 
@@ -21,8 +21,39 @@ export default function NavBar() {
     },
   ];
   const [navbarOpen, setNavbarOpen] = useState(false);
+
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const controlNavbar = () => {
+    if (window.scrollY > lastScrollY) {
+      // if scroll down hide the navbar
+      setShow(false);
+    } else {
+      // if scroll up show the navbar
+      setShow(true);
+    }
+
+    // remember current page location to use in the next move
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+
+    // cleanup function
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#121212] bg-opacity-100">
+    <nav
+      className={`active ${
+        show
+          ? "fixed top-0 left-0 right-0 z-50 bg-[#121212] bg-opacity-100"
+          : "hidden"
+      }`}
+    >
       <div className="flex flex-wrap items-center justify-between mx-auto p-8">
         <Link
           href={"/"}

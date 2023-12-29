@@ -4,16 +4,33 @@ import { FormEvent, useState } from "react";
 
 export default function EmailSection() {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [data, setData] = useState({
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  function onHandleChange(
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) {
+    const { name, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  }
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     // Access form elements directly using FormData
     const target = e.target as HTMLFormElement;
     const formData = new FormData(target);
-    console.log("formData", formData);
     const email = formData.get("email");
     const subject = formData.get("subject");
     const message = formData.get("message");
+    formData.set("email", "");
 
     // Perform basic validation
     if (!email || !subject || !message) {
@@ -27,20 +44,16 @@ export default function EmailSection() {
       subject: subject,
       message: message,
     };
-    console.log(data);
     const JSONdata = JSON.stringify(data);
-    console.log(JSONdata);
-    const endpoint = "/api/send";
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
-
     try {
-      const response = await fetch(endpoint, options);
+      const endpoint = "/api/send";
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSONdata,
+      });
 
       if (!response.ok) {
         // Handle non-OK responses (e.g., server errors)
@@ -48,10 +61,15 @@ export default function EmailSection() {
         return;
       }
 
-      const resData = await response.json();
-      console.log(resData);
+      setData({
+        email: "",
+        subject: "",
+        message: "",
+      });
       setEmailSubmitted(true);
-      // Optionally, show a success message to the user
+      setTimeout(() => {
+        setEmailSubmitted(false);
+      }, 6000);
     } catch (error) {
       // Handle fetch errors (e.g., network issues)
       console.error("Error sending message:", error);
@@ -75,11 +93,14 @@ export default function EmailSection() {
           scrambled it to make a type
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href={"github.com"}>
+          <Link target="_blank" href={"https://github.com/hixcoder"}>
             <img src="/images/github-icon.svg" alt="" />
           </Link>
 
-          <Link href={"github.com"}>
+          <Link
+            target="_blank"
+            href={"https://www.linkedin.com/in/hamza-boumahdi"}
+          >
             <img src="/images/linkedin-icon.svg" alt="" />
           </Link>
         </div>
@@ -94,6 +115,8 @@ export default function EmailSection() {
               Your Email
             </label>
             <input
+              onChange={onHandleChange}
+              value={data.email}
               name="email"
               type="email"
               id="email"
@@ -110,6 +133,8 @@ export default function EmailSection() {
               Subject
             </label>
             <input
+              onChange={onHandleChange}
+              value={data.subject}
               name="subject"
               type="text"
               id="subject"
@@ -126,6 +151,8 @@ export default function EmailSection() {
               Message
             </label>
             <textarea
+              onChange={onHandleChange}
+              value={data.message}
               name="message"
               id="message"
               placeholder="Let's talk about..."
