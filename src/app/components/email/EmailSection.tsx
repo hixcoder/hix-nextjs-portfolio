@@ -54,18 +54,17 @@ export default function EmailSection() {
         },
         body: JSONdata,
       });
-
+      setData({
+        email: "",
+        subject: "",
+        message: "",
+      });
       if (!response.ok) {
         // Handle non-OK responses (e.g., server errors)
         console.error("Failed to send message");
         return;
       }
 
-      setData({
-        email: "",
-        subject: "",
-        message: "",
-      });
       setEmailSubmitted(true);
       setTimeout(() => {
         setEmailSubmitted(false);
