@@ -80,16 +80,15 @@ export default function EmailSection() {
       className="grid md:grid-cols-2 my-12 md:mx-12 py-24 gap-4 relative"
       id="contact"
     >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-color-main to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          Lorem Ipsum has been the industry&apos;s standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type
+          We&apos;re excited to hear from you! Whether you have questions, want
+          to collaborate, or simply want to say hello, feel free to reach out.
+          Your feedback and inquiries are valuable to us. Drop us a message, and
+          we&apos;ll get back to you as soon as possible.
         </p>
         <div className="socials flex flex-row gap-2">
           <Link target="_blank" href={"https://github.com/hixcoder"}>
@@ -160,7 +159,7 @@ export default function EmailSection() {
           </div>
           <button
             type="submit"
-            className="bg-color-main hover:bg-color-main text-white font-medium py-2.5 px-5 rounded-lg w-full"
+            className="bg-color-main hover:bg-orange-700 text-white font-medium py-2.5 px-5 rounded-lg w-full"
           >
             Send
           </button>

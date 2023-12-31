@@ -28,7 +28,8 @@ export default function ProjectsSection() {
     {
       id: 3,
       title: "ft_transcendance",
-      description: "#Nextjs #TS #Tailwind #Redux #Nestjs #Postgres ",
+      description:
+        "#Nextjs #TS #Tailwind #Redux #Nestjs #Postgres #docker #socket.io",
       image: "/images/projects/3.png",
       tag: ["All", "Web"],
       gitUrl: "https://github.com/hixcoder/ft_transcendance",
@@ -45,11 +46,11 @@ export default function ProjectsSection() {
     },
     {
       id: 5,
-      title: "HixSocial",
-      description: "#JS #HTML5 #CSS3 ",
+      title: "Minishell",
+      description: "#C #Bash",
       image: "/images/projects/5.png",
-      tag: ["All", "Web"],
-      gitUrl: "https://github.com/hixcoder/HixSocial",
+      tag: ["All", "C/C++"],
+      gitUrl: "https://github.com/hixcoder/minishell",
       previewUrl: "",
     },
   ];
