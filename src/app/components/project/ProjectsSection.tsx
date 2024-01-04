@@ -53,6 +53,15 @@ export default function ProjectsSection() {
       gitUrl: "https://github.com/hixcoder/minishell",
       previewUrl: "",
     },
+    {
+      id: 6,
+      title: "hix-checkout-page",
+      description: "#Nextjs #TS #Tailwind #TanStack/Query",
+      image: "/images/projects/6.png",
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/hixcoder/hix_CheckoutPage",
+      previewUrl: "https://hix-checkout-page.vercel.app/",
+    },
   ];
 
   const ref = useRef(null);
